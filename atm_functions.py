@@ -244,7 +244,7 @@ def dragcoeff(vel, temp, rho_a, A): # by Trent
         hw = interp_shape(A, hw_vals)
         M_c_vals = np.array([1.5, 1.2, 1.1])
         M_c = interp_shape(A, M_c_vals)
-        cd_crit_vals = np.array([1, logistic_fn(mach)/0.92, logistic_fn(mach)/0.92])# Critical values
+        cd_crit_vals = np.array([1, logistic_fn(mach)/0.92, logistic_fn(mach)/0.92],dtype=object)# Critical values
         cd_c = interp_shape(A, cd_crit_vals)
 
         gumbel_dist = lambda M: (cd_c - logistic_fn(M))* np.exp(-(M - M_c) / hw \
